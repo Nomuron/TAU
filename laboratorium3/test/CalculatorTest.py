@@ -1,6 +1,6 @@
 import unittest
 
-from laboratorium1.src.Calculator import add, divide, subtract, multiply
+from laboratorium3.src.Calculator import add, divide, subtract, multiply
 
 
 class MyTestCase(unittest.TestCase):
