@@ -2,7 +2,7 @@ import unittest
 from io import StringIO
 from unittest.mock import patch
 
-from lasboratorium5_6.src.game import generate_board, print_board, move_player
+from lasboratorium5_6.src.game import generate_board, print_board, move_player, game
 
 
 class MyTestCase(unittest.TestCase):
@@ -48,6 +48,48 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(player_new_row, 1)
         self.assertEqual(player_new_col, 3)
 
+    def test_move_down(self):
+        player_row = self.start_row
+        player_col = self.start_col
+
+        self.board[player_row][player_col] = '_'
+        player_row, player_col = 2, 3
+        self.board[player_row + 1][player_col] = '_'
+        player_new_row, player_new_col, _, _ = move_player(self.board, 's',
+                                                           player_row, player_col,
+                                                           self.start_row, self.start_col)
+
+        self.assertEqual(player_new_row, 3)
+        self.assertEqual(player_new_col, 3)
+
+    def test_move_left(self):
+        player_row = self.start_row
+        player_col = self.start_col
+
+        self.board[player_row][player_col] = '_'
+        player_row, player_col = 2, 3
+        self.board[player_row][player_col - 1] = '_'
+        player_new_row, player_new_col, _, _ = move_player(self.board, 'a',
+                                                           player_row, player_col,
+                                                           self.start_row, self.start_col)
+
+        self.assertEqual(player_new_row, 2)
+        self.assertEqual(player_new_col, 2)
+
+    def test_move_right(self):
+        player_row = self.start_row
+        player_col = self.start_col
+
+        self.board[player_row][player_col] = '_'
+        player_row, player_col = 2, 3
+        self.board[player_row][player_col + 1] = '_'
+        player_new_row, player_new_col, _, _ = move_player(self.board, 'd',
+                                                           player_row, player_col,
+                                                           self.start_row, self.start_col)
+
+        self.assertEqual(player_new_row, 2)
+        self.assertEqual(player_new_col, 4)
+
     def test_boarder_blockage(self):
         player_row = self.start_row
         player_col = self.start_col
@@ -77,7 +119,6 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(player_new_row, 3)
             self.assertEqual(player_new_row, 3)
             self.assertEqual(printed_content, 'Nie można tam przejść. Jest przeszkoda!')
-
 
 if __name__ == '__main__':
     unittest.main()

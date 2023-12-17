@@ -56,9 +56,7 @@ def move_player(board, direction, current_row, current_col, start_row, start_col
         return current_row, current_col, start_row, start_col
 
 
-def main():
-    game_board, player_row, player_col, end_row, end_col = generate_board()
-
+def game(game_board, player_row, player_col, end_row, end_col):
     start_row, start_col = player_row, player_col
 
     while True:
@@ -78,6 +76,12 @@ def main():
                 game_board[start_row][start_col] = 'S'
         else:
             print("Nieprawidłowy kierunek. Podaj poprawny ruch.")
+
+
+def main():
+    game_board, player_row, player_col, end_row, end_col = generate_board()
+
+    game(game_board, player_row, player_col, end_row, end_col)
 
 
 if __name__ == "__main__":
