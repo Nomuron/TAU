@@ -2,7 +2,7 @@ import unittest
 from io import StringIO
 from unittest.mock import patch
 
-from lasboratorium5_6.src.game import generate_board, print_board, move_player, game
+from laboratorium5.src.game import generate_board, print_board, move_player, game
 
 
 class MyTestCase(unittest.TestCase):
