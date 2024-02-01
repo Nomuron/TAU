@@ -41,7 +41,7 @@ Error percentage - 0%
 3000 requests in 90 seconds(1.5 min.)
 ![plot](./result_images/3000,90.png)
 <br>
-We can observe very small increase in maximum latency, to be specific 3ms.
+We can observe very small increase in maximum latency, to be specific 18ms.
 This change won't really cause any issue in application.
 
 <br>
@@ -79,7 +79,7 @@ Error percentage - 0%
 3000 requests in 40 seconds
 ![plot](./result_images/3000,40.png)
 <br>
-We can observe increase in average latency. It almost doubled, 
+We can observe increase in maximum latency. It almost doubled, 
 but still is only 24ms so we don't see it as an issue.
 
 <br>
@@ -137,7 +137,7 @@ Error percentage - 0%
 3000 requests in 15 seconds
 ![plot](./result_images/3000,15.png)
 <br>
-We can see one more time decrease of average latency. 
+We can see one more time decrease of maximum latency. 
 It's a sign that previous assumption about reaching 
 the first limit was incorrect.
 
@@ -180,7 +180,7 @@ Error percentage - 0%
 ![plot](./result_images/3000,6.png)
 <br>
 One more time we can see increase in average and maximum latency. 
-Average latency trippled from 1s to 3s, and max latency doubled 
+Average latency trippled from 1 thousand to 3 thousand, and max latency doubled 
 from 4.5s to 9.5s. Test will be continued to find first occuring 
 HTTP connections errors.
 
@@ -207,11 +207,11 @@ limit where we stop to continue load testing.
 <br>
 Results in latency:
 <br>
-Average - 3144ms
+Average - 951ms
 <br>
-Min - 9ms
+Min - 0ms
 <br>
-Max - 9479ms
+Max - 4979ms
 <br>
 Error percentage - 47.67%
 
